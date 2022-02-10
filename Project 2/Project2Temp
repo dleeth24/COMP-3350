@@ -1,0 +1,45 @@
+.386
+.model flat, stdcall
+.stack 4096
+ExitProcess proto, dwExitCode:dword
+
+.data
+		input BYTE 1,2,3,4,5,6,7,8
+		shift BYTE 2
+.code
+		main proc
+			; clear up the registers to make sure there is no old values inside them
+			mov EAX, 0                      
+			mov EBX, 0
+			mov ECX, 0
+			mov EDX, 0
+
+			; setup EAX register with 1st and 2nd values from the input array
+			?                     ; add 1st value from input into register
+			mov EAX, [input]
+			?                     ; shift the value inside the register
+            ?                     ; add 2nd value from input into register
+			?                     ; shift the value inside the register
+				
+			; setup EBX register with 3rd and 4th values from the input array
+			?                     ; add 3rd value from input into register
+			?                     ; shift the value inside the register
+                        ?                     ; add 4th value from input into register
+			?                     ; shift the value inside the register
+
+			; setup ECX register with 5th and 6th values from the input array
+			?                     ; add 5th value from input into register
+			?                     ; shift the value inside the register
+                        ?                     ; add 6th value from input into register
+			?                     ; shift the value inside the register
+
+			; setup EDX register with 7th and 8th values from the input array
+			?                     ; add 7th value from input into register
+			?                     ; shift the value inside the register
+                        ?                     ; add 8th value from input into register
+			?                     ; shift the value inside the register
+
+			; exit the program
+			invoke ExitProcess, 0
+		main endp
+end main
